@@ -1,7 +1,3 @@
-# Boot Animation
-TARGET_SCREEN_HEIGHT := 854 
-TARGET_SCREEN_WIDTH := 480
-
 # Include GSM stuff
 $(call inherit-product, vendor/cm/config/gsm.mk)
 
@@ -17,9 +13,13 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 PRODUCT_NAME := cm_s9081
 PRODUCT_BRAND := micromax
 PRODUCT_DEVICE := s9081
-PRODUCT_MODEL := CANVAS 2
+PRODUCT_MODEL := Micromax Canvas 2 A110
 PRODUCT_MANUFACTURER := micromax
 PRODUCT_CHARACTERISTICS := phone
+
+# Boot Animation
+TARGET_SCREEN_HEIGHT := 854 
+TARGET_SCREEN_WIDTH := 480
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=mmx_s9081 \
