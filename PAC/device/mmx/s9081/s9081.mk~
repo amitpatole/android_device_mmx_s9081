@@ -30,10 +30,17 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_COPY_FILES += \
-    device/mmx/s9081/files/init.s9081.rc:root/init.s9081.rc \
-    device/mmx/s9081/files/ueventd.s9081.rc:root/ueventd.s9081.rc \
-    device/mmx/s9081/files/init.s9081.usb.rc:root/init.s9081.usb.rc \
-    
+	device/mmx/s9081/files/root/init.rc:root/init.rc \
+	device/mmx/s9081/files/root/ueventd.rc:root/ueventd.rc \
+	device/mmx/s9081/files/root/init.project.rc:root/init.project.rc \
+	device/mmx/s9081/files/root/advanced_meta_init.project.rc:root/advanced_meta_init.project.rc \
+	device/mmx/s9081/files/root/advanced_meta_init.rc:root/advanced_meta_init.rc \
+	device/mmx/s9081/files/root/init.aee.customer.rc:root/init.aee.customer.rc \
+	device/mmx/s9081/files/root/init.factory.rc:root/init.factory.rc \
+	device/mmx/s9081/files/root/init.usb.rc:root/init.usb.rc \
+	device/mmx/s9081/files/root/init.xlog.rc:root/init.xlog.rc \
+	device/mmx/s9081/files/root/meta_init.rc:root/meta_init.rc \
+	
 # Camera
 ## Let's First make it atleast Bootable
     
@@ -89,7 +96,7 @@ PRODUCT_COPY_FILES += \
     
 # Sensors
 PRODUCT_COPY_FILES += \
-    vendor/mmx/s9081/files/lib/hw/sensors.mt6577.so:system/lib/hw/sensors.mt6577.so \
+    vendor/mmx/s9081/proprietary/lib/hw/sensors.mt6577.so:system/lib/hw/sensors.mt6577.so \
 
 # Firmware (MT6***)
 PRODUCT_COPY_FILES += \
@@ -117,21 +124,38 @@ PRODUCT_COPY_FILES += \
     device/mmx/s9081/files/etc/firmware/touchpanel/tinno-fts-update-5d27.ekt:system/etc/firmware/touchpanel/tinno-fts-update-5d27.ekt \
     device/mmx/s9081/files/etc/firmware/touchpanel/tinno-fts-update-594e.bin:system/etc/firmware/touchpanel/tinno-fts-update-594e.bin
 
-# Egl
+# Gralloc & POWERVR stuff
 PRODUCT_COPY_FILES += \
-    device/mmx/s9081/files/lib/egl/egl.conf:system/lib/egl/egl.conf 
+    device/mmx/s9081/files/lib/egl/egl.conf:system/lib/egl/egl.conf \
+    vendor/mmx/s9081/proprietary/lib/egl/libEGL_mtk.so:system/lib/egl/libEGL_mtk.so \
+    vendor/mmx/s9081/proprietary/lib/egl/libGLESv1_CM_mtk.so:system/lib/egl/libGLESv1_CM_mtk.so \
+    vendor/mmx/s9081/proprietary/lib/egl/libGLESv2_mtk.so:system/lib/egl/libGLESv2_mtk.so \
+    vendor/mmx/s9081/proprietary/lib/hw/gralloc.mt6577.so:system/lib/hw/gralloc.mt6577.so \
+    vendor/mmx/s9081/proprietary/lib/libBLPP.so:system/lib/libBLPP.so \
+    vendor/mmx/s9081/proprietary/lib/libglslcompiler.so:system/lib/libglslcompiler.so \
+    vendor/mmx/s9081/proprietary/lib/libIMGegl.so:system/lib/libIMGegl.so \
+    vendor/mmx/s9081/proprietary/lib/libpvr2d.so:system/lib/libpvr2d.so \
+    vendor/mmx/s9081/proprietary/lib/libpvrANDROID_WSEGL.so:system/lib/libpvrANDROID_WSEGL.so \
+    vendor/mmx/s9081/proprietary/lib/libPVRScopeServices.so:system/lib/libPVRScopeServices.so \
+    vendor/mmx/s9081/proprietary/lib/libsrv_init.so:system/lib/libsrv_init.so \
+    vendor/mmx/s9081/proprietary/lib/libsrv_um.so:system/lib/libsrv_um.so \
+    vendor/mmx/s9081/proprietary/lib/libusc.so:system/lib/libusc.so \
+    vendor/mmx/s9081/proprietary/lib/libwvdrm_L3.so:system/lib/libwvdrm_L3.so \
+    vendor/mmx/s9081/proprietary/lib/libwvm.so:system/lib/libwvm.so \
+    vendor/mmx/s9081/proprietary/lib/libWVStreamControlAPI_L3.so:system/lib/libWVStreamControlAPI_L3.so \
+     
     
 # RIL
 PRODUCT_COPY_FILES += \
-    device/mmx/s9081/files/lib/mtk-ril.so:system/lib/mtk-ril.so \
-    device/mmx/s9081/files/lib/mtk-ril3.so:system/lib/mtk-ril3.so \
-    device/mmx/s9081/files/lib/librilmtk.so:system/lib/librilmtk.so \
-    device/mmx/s9081/files/lib/libril3mtk.so:system/lib/libril3mtk.so
+    vendor/mmx/s9081/proprietary/lib/mtk-ril.so:system/lib/mtk-ril.so \
+    vendor/mmx/s9081/proprietary/lib/mtk-ril3.so:system/lib/mtk-ril3.so \
+    vendor/mmx/s9081/proprietary/lib/librilmtk.so:system/lib/librilmtk.so \
+    vendor/mmx/s9081/proprietary/lib/libril3mtk.so:system/lib/libril3mtk.so
     
  
 # Bluetooth
 PRODUCT_COPY_FILES += \
-    device/mmx/s9081/files/lib/libmtka2dp.so:system/lib/libmtka2dp.so \
+    vendor/mmx/s9081/proprietary/lib/libmtka2dp.so:system/lib/libmtka2dp.so \
 
 # Keylayouts & Keychars
 PRODUCT_COPY_FILES += \
